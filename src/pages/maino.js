@@ -9,7 +9,7 @@ import {
     TouchableOpacity
 } from "react-native";
 
-export default class Main extends Component {
+export default class Main0 extends Component {
     static navigationOptions = ({ navigation }) => {
         return {
             title: "Sticker I.O"

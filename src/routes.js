@@ -1,23 +1,30 @@
-import { createStackNavigator, createAppContainer } from "react-navigation";
+// import { createStackNavigator, createAppContainer } from "react-navigation";
 
-import Main from "./pages/main";
-import Product from "./pages/product";
+// /**/
+// import Maino from "./pages/maino";
+// import Product from "./pages/product";
+// /**/
 
-const MainNavigator = createStackNavigator(
-    {
-        Main,
-        Product
-    },
-    {
-        defaultNavigationOptions: {
-            headerStyle: {
-                backgroundColor: "#3f2369"
-            },
-            headerTintColor: "#FFF"
-        }
-    }
-);
+// import MainPage from "./pages/mainpage";
 
-const App = createAppContainer(MainNavigator);
+// const MainNavigator = createStackNavigator(
+//     {
+//         MainPage,
+//         Maino,
+//         Product,
+//     },
+//     {
+//         defaultNavigationOptions: {
+//             headerStyle: {
+//                 backgroundColor: "#3f2369"
+//             },
+//             headerTintColor: "#FFF"
+//         }
+//     }
+// );
 
-export default App;
+// const App = createAppContainer(MainNavigator);
+
+// export default App;
+import MainPage from "./pages/mainpage";
+export default MainPage;
