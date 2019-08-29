@@ -9,21 +9,20 @@ import {
 } from "react-native";
 
 export default class MainPage extends Component {
-  static navigationOptions = () => {
-    return {};
-  };
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.Top}>Sticker I.O</Text>
         <TextInput style={styles.loginInput} placeholder="Usuario" />
         <TextInput style={styles.loginInput} placeholder="Senha" />
-        <TouchableOpacity style={styles.btn}>
-          <Text>Entrar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.btn}>
-          <Text>Pedir código</Text>
-        </TouchableOpacity>
+        <View style={styles.btnContainer}>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Entrar</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.btn}>
+            <Text>Pedir código</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }
@@ -35,7 +34,8 @@ const styles = StyleSheet.create({
     color: "#888888",
     // flex: 1,
     // alignItems:'flex-start',
-    //marginBottom: -50
+    marginTop: 50,
+    marginBottom: 80
   },
   container: {
     flex: 1,
@@ -53,12 +53,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     borderRadius: 10
   },
+  btnContainer: {
+    flex: 1,
+    flexDirection: "row",
+    width: "100%",
+    height: "1%",
+    alignItems: "flex-start",
+    justifyContent: "center",
+  },
   btn: {
-    width: "50%",
+    width: "35%",
+    height: 40,
     padding: 8,
     backgroundColor: "#fff",
     marginBottom: 10,
     alignItems: "center",
-    borderRadius: 5
+    justifyContent: "center",
+    borderRadius: 5,
+    margin: 10
   }
 });
