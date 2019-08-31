@@ -7,13 +7,15 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 
 import MainPage from "./pages/mainpage";
 import Cod from "./pages/cod";
+import Cadastro from "./pages/cadastro";
 
 import Colors from "./config/Colors"
 
 const MainNavigator = createStackNavigator(
   {
     MainPage,
-    Cod
+    Cod,
+    Cadastro
   },
   {
     defaultNavigationOptions: {

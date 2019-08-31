@@ -11,6 +11,8 @@ import LinearGradient from "react-native-linear-gradient";
 
 import Colors from "../config/Colors";
 export default class Cod extends Component {
+  // static navigationOptions = ({navigation}) =>{
+  // }
   render() {
     return (
       <LinearGradient
@@ -20,12 +22,20 @@ export default class Cod extends Component {
         style={{ flex: 1 }}
       >
         <View style={styles.container}>
+          <Text style={styles.Top}>Solicitar código</Text>
+          <TextInput style={styles.loginInput} placeholder="Seu nome" />
           <TextInput style={styles.loginInput} placeholder="Email" />
           <TouchableOpacity
             onPress={() => this.props.navigation.navigate("MainPage")}
             style={styles.btn}
           >
             <Text>Enviar email</Text>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={{ paddingBottom: 40 }}
+            onPress={() => this.props.navigation.navigate("Cadastro")}
+          >
+            <Text style={styles.codText}>Já possuo código</Text>
           </TouchableOpacity>
         </View>
       </LinearGradient>
@@ -34,12 +44,22 @@ export default class Cod extends Component {
 }
 
 const styles = StyleSheet.create({
+  Top: {
+    fontSize: 50,
+    color: "#FFF",
+    // flex: 1,
+    // alignItems:'flex-start',
+    //marginTop: 20,
+    marginBottom: 55,
+    textAlign: "center"
+  },
   container: {
     flex: 1,
     //backgroundColor: Colors.Light,
     alignItems: "center",
     justifyContent: "center",
-    padding: 50
+    paddingLeft: 50,
+    paddingRight: 50
   },
   loginInput: {
     width: "100%",
@@ -68,5 +88,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     borderRadius: 5,
     margin: 10
+  },
+  codText: {
+    fontSize: 16,
+    textDecorationLine: "underline",
+    color: "#fff",
+    marginTop: 30
   }
 });
