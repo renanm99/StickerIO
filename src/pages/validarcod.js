@@ -12,11 +12,12 @@ import LinearGradient from "react-native-linear-gradient";
 
 import Colors from "../config/Colors";
 
-const a = ({ navigation }) => {
-  return this.props.navigation.navigate("MainPage");
-};
+export default class ValidarCadastro extends Component {
 
-export default class Cadastro extends Component {
+  teste = () =>{
+    this.props.navigation.navigate("Cadastro");
+  }
+
   render() {
     return (
       <LinearGradient
@@ -26,12 +27,10 @@ export default class Cadastro extends Component {
         style={{ flex: 1 }}
       >
         <View style={styles.container}>
-          <Text style={styles.Top}>Solicitar código</Text>
+          <Text style={styles.Top}>Validar código</Text>
           <TextInput style={styles.loginInput} placeholder="Código" />
           <TouchableOpacity
-            onPress={() => {
-              this.props.navigation.navigate("MainPage");
-            }}
+            onPress={this.teste}
             style={styles.btn}
           >
             <Text>Validar</Text>

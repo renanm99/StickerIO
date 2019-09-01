@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'hunt' do
-  # Pods for hunt
+target 'StickerIO' do
+  # Pods for StickerIO
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
@@ -27,7 +27,7 @@ target 'hunt' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'huntTests' do
+  target 'StickerIOTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -35,10 +35,10 @@ target 'hunt' do
   use_native_modules!
 end
 
-target 'hunt-tvOS' do
-  # Pods for hunt-tvOS
+target 'StickerIO-tvOS' do
+  # Pods for StickerIO-tvOS
 
-  target 'hunt-tvOSTests' do
+  target 'StickerIO-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

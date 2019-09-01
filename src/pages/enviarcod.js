@@ -10,7 +10,7 @@ import {
 import LinearGradient from "react-native-linear-gradient";
 
 import Colors from "../config/Colors";
-export default class Cod extends Component {
+export default class EnviarCod extends Component {
   // static navigationOptions = ({navigation}) =>{
   // }
   render() {
@@ -33,7 +33,7 @@ export default class Cod extends Component {
           </TouchableOpacity>
           <TouchableOpacity
             style={{ paddingBottom: 40 }}
-            onPress={() => this.props.navigation.navigate("Cadastro")}
+            onPress={() => this.props.navigation.navigate("ValidarCod")}
           >
             <Text style={styles.codText}>Já possuo código</Text>
           </TouchableOpacity>

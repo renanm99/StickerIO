@@ -1,4 +1,4 @@
-package com.hunt;
+package com.stickerio;
 
 import android.app.Application;
 import android.util.Log;
