@@ -8,25 +8,27 @@ import { createStackNavigator, createAppContainer } from "react-navigation";
 import MainPage from "./pages/mainpage";
 import EnviarCod from "./pages/enviarcod";
 import ValidarCod from "./pages/validarcod";
-import Cadastro from './pages/cadastro';
+import Cadastro from "./pages/cadastro";
+import EsqueciSenha from "./pages/esquecisenha";
 
-import Colors from "./config/Colors"
+import Colors from "./config/Colors";
 
 const MainNavigator = createStackNavigator(
-  {
-    MainPage,
-    EnviarCod,
-    ValidarCod,
-    Cadastro
-  },
-  {
-    defaultNavigationOptions: {
-      headerStyle: {
-          backgroundColor: Colors.Dark,
-      },
-      headerTintColor: '#fff'
+    {
+        MainPage,
+        EnviarCod,
+        ValidarCod,
+        Cadastro,
+        EsqueciSenha
+    },
+    {
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: Colors.Dark
+            },
+            headerTintColor: "#fff"
+        }
     }
-  }
 );
 
 const App = createAppContainer(MainNavigator);

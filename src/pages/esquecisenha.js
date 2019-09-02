@@ -10,7 +10,16 @@ import {
 import LinearGradient from "react-native-linear-gradient";
 
 import Colors from "../config/Colors";
-export default class EnviarCod extends Component {
+
+export default class EsqueciSenha extends Component {
+    state = {
+        email: ""
+    };
+    EnviarEmail = () => {
+        if (!(this.state.email == "")) {
+            this.props.navigation.navigate("MainPage");
+        }
+    };
     render() {
         return (
             <LinearGradient
@@ -20,27 +29,17 @@ export default class EnviarCod extends Component {
                 style={{ flex: 1 }}
             >
                 <View style={styles.container}>
-                    <Text style={styles.Top}>Solicitar código</Text>
+                    <Text style={styles.Top}>Esqueci minha senha</Text>
                     <TextInput
+                        onChange={value => this.setState({ email: value })}
                         style={styles.loginInput}
-                        placeholder="Seu nome"
+                        placeholder="Email"
                     />
-                    <TextInput style={styles.loginInput} placeholder="Email" />
                     <TouchableOpacity
-                        onPress={() =>
-                            this.props.navigation.navigate("MainPage")
-                        }
+                        onPress={this.EnviarEmail}
                         style={styles.btn}
                     >
-                        <Text>Enviar email</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={{ paddingBottom: 40 }}
-                        onPress={() =>
-                            this.props.navigation.navigate("ValidarCod")
-                        }
-                    >
-                        <Text style={styles.codText}>Já possuo código</Text>
+                        <Text>Enviar</Text>
                     </TouchableOpacity>
                 </View>
             </LinearGradient>
@@ -51,20 +50,16 @@ export default class EnviarCod extends Component {
 const styles = StyleSheet.create({
     Top: {
         fontSize: 50,
-        color: "#FFF",
-        // flex: 1,
-        // alignItems:'flex-start',
-        //marginTop: 20,
-        marginBottom: 55,
-        textAlign: "center"
+        color: "#fff",
+        textAlign: "center",
+        marginBottom: 55
     },
     container: {
-        flex: 1,
-        //backgroundColor: Colors.Light,
+        flex: 0.84,
+        //backgroundColor: Colors.Dark,
         alignItems: "center",
         justifyContent: "center",
-        paddingLeft: 50,
-        paddingRight: 50
+        padding: 50
     },
     loginInput: {
         width: "100%",
@@ -72,27 +67,25 @@ const styles = StyleSheet.create({
         fontSize: 15,
         padding: 10,
         //textAlign: 'center',
-        marginBottom: 20,
+        marginTop: 20,
         borderRadius: 10
     },
     btnContainer: {
         flex: 1,
-        flexDirection: "row",
         width: "100%",
         height: "1%",
-        alignItems: "flex-start",
-        justifyContent: "center"
+        alignItems: "center",
+        justifyContent: "flex-start"
     },
     btn: {
         width: "40%",
         height: 40,
         padding: 8,
         backgroundColor: "#fff",
-        marginBottom: 10,
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 5,
-        margin: 10
+        margin: 15
     },
     codText: {
         fontSize: 16,
@@ -101,3 +94,5 @@ const styles = StyleSheet.create({
         marginTop: 30
     }
 });
+
+//export default EsqueciSenha;

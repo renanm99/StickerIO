@@ -41,6 +41,7 @@ export default class MainPage extends Component {
                         <TouchableOpacity style={styles.btn}>
                             <Text>Entrar</Text>
                         </TouchableOpacity>
+
                         <TouchableOpacity
                             onPress={() =>
                                 this.props.navigation.navigate("EnviarCod")
@@ -49,7 +50,12 @@ export default class MainPage extends Component {
                         >
                             <Text>Solicitar código</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={{ paddingBottom: 40 }}>
+                        <TouchableOpacity
+                            onPress={() =>
+                                this.props.navigation.navigate("EsqueciSenha")
+                            }
+                            style={{ paddingBottom: 40 }}
+                        >
                             <Text style={styles.codText}>
                                 Esqueci minha senha
                             </Text>
@@ -64,7 +70,7 @@ export default class MainPage extends Component {
 const styles = StyleSheet.create({
     Top: {
         fontSize: 70,
-        color: "#888888",
+        color: "#fff",
         // flex: 1,
         // alignItems:'flex-start',
         marginTop: 50,

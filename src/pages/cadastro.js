@@ -19,6 +19,7 @@ export default class Cadastro extends Component {
         password2: ""
     };
     teste = () => {
+        console.log("cadastro");
         const { user, password, password2 } = this.state;
         if (password != "" && password.length > 5) {
             if (!password.includes(" ")) {
