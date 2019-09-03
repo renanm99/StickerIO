@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Api from "../services/api";
 
 import {
     View,
@@ -15,19 +16,42 @@ import Colors from "../config/Colors";
 export default class Cadastro extends Component {
     state = {
         user: "",
+        email: "",
         password: "",
         password2: ""
     };
-    teste = () => {
+    teste = async() => {
         console.log("cadastro");
         const { user, password, password2 } = this.state;
-        if (password != "" && password.length > 5) {
-            if (!password.includes(" ")) {
-                if (password === password2) {
-                    this.props.navigation.navigate("MainPage");
+        //if (password != "" && password.length > 5) {
+            //if (!password.includes(" ")) {
+                if (true === true) {
+                    const newUser = {
+                        user: this.state.user,
+                        email: this.state.email,
+                        password:this.state.password,
+                        createdAt:Date.now()
+                    };
+                    console.log(newUser);
+                    // await Api.post("/cadastro/usuario",newUser).then((response)=>{
+                    //     console.log(response);
+                    // }).catch((error)=>{
+                    //     console.log(error);
+                    // });
+                    //this.props.navigation.navigate("MainPage");
                 }
-            }
-        }
+          //  }
+        //}
+    };
+
+    componentDidMount() {
+        this.loadProducts();
+    }
+
+    loadProducts = async () => {
+        this.setState({
+            email: this.props.navigation.getParam('email')
+        });
     };
 
     render() {
@@ -40,9 +64,7 @@ export default class Cadastro extends Component {
             >
                 <View style={styles.container}>
                     <Text style={styles.Top}>Cadastro</Text>
-                    <Text style={styles.emailText}>
-                        renanoliveira2199aaaaaaaa@gmail.com
-                    </Text>
+                    <Text style={styles.emailText}>{this.state.email}</Text>
                     <TextInput
                         style={styles.loginInput}
                         placeholder="Usuário"

@@ -77,10 +77,11 @@ import com.android.build.OutputFile
 
 project.ext.react = [
     entryFile: "index.js",
-    enableHermes: false,  // clean and rebuild if changing
+    enableHermes: true,  // clean and rebuild if changing
+    hermesCommand: "../../node_modules/hermes-engine/%OS-BIN%/hermes",
 ]
 
-apply from: "../../node_modules/react-native/react.gradle"
+apply from: "./react.gradle"
 
 /**
  * Set this to true to create two separate APKs instead of one:
@@ -128,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.stickerio"
+        applicationId "com.helloworld"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -192,11 +193,11 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     if (enableHermes) {
-      def hermesPath = "../../node_modules/hermesvm/android/";
-      debugImplementation files(hermesPath + "hermes-debug.aar")
-      releaseImplementation files(hermesPath + "hermes-release.aar")
+        def hermesPath = "../../node_modules/hermes-engine/android/";  //  <-- change this
+        debugImplementation files(hermesPath + "hermes-debug.aar")
+        releaseImplementation files(hermesPath + "hermes-release.aar")
     } else {
-      implementation jscFlavor
+        implementation jscFlavor
     }
 }
 
