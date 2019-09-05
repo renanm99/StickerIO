@@ -32,13 +32,12 @@ export default class Cadastro extends Component {
                         password:this.state.password,
                         createdAt:Date.now()
                     };
-                    console.log(newUser);
-                    // await Api.post("/cadastro/usuario",newUser).then((response)=>{
-                    //     console.log(response);
-                    // }).catch((error)=>{
-                    //     console.log(error);
-                    // });
-                    //this.props.navigation.navigate("MainPage");
+                    await Api.post("/cadastro/usuario",newUser).then((response)=>{
+                        console.log(response);
+                    }).catch((error)=>{
+                        console.log(error);
+                    });
+                    this.props.navigation.navigate("MainPage");
                 }
           //  }
         //}
